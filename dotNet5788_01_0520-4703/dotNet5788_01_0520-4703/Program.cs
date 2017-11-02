@@ -10,7 +10,7 @@ namespace dotNet5788_01_0520_4703
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(    "Hello_World");
+            Console.WriteLine();
             Console.WriteLine("another testing");
             Console.WriteLine("changing in yechiel");
         }

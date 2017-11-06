@@ -10,9 +10,26 @@ namespace dotNet5788_01_0520_4703
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
-            Console.WriteLine("another testing");
-            Console.WriteLine("changing in yechiel");
+            question1 q1 = new question1();
+            question2 q2 = new question2();
+            bool stop = false;
+            while (!stop)
+            {
+                Console.WriteLine("/nPlease pick a Question: ");
+                switch (Console.Read())
+                {
+                    case (1):
+                        q1.play();
+                        break;
+                    case (2):
+                        q2.play();
+                        break;
+                    default:
+                        stop = true;
+                        break;
+                }
+            }
+
         }
     }
 }

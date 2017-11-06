@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace dotNet5788_01_0520_4703
 {
-    class question1
+    class question1 
     {
+        int arr[] = new int[];
+        
+        public void play()
+        {
+
+
+        }
+
+
+
     }
 }

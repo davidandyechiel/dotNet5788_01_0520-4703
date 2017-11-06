@@ -45,7 +45,6 @@ namespace dotNet5788_01_0520_4703
                         if (range1 < range2)
                             CheckGuess(amount, range1, range2);
                         else CheckGuess(amount, range2, range1);
-
                         break;
                     default:
                         stop = true;

@@ -4,33 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace dotNet5788_01_0520_4703
 {
     class Program
     {
+        public static Random rand = new Random();
         static void Main(string[] args)
         {
-            pickAnum();
-        }
-
-
-
-        static void pickAnum()
-        {
-            Console.WriteLine("Please choose question");
-            switch ((Console.Read()))
+            question1 q1 = new question1();
+            //    question2 q2 = new question1();
+            bool stop = false;
+            while (!stop)
             {
-                case 1:
-                    { }
-                    break;
-                case 2:
+                Console.WriteLine("Please pick a Question: ");
 
-                    break;
-                 defulte;
-                    pickAnum();
+                //  string str = Console.ReadLine();
+                //  switch ((int)str.First())
+                switch (Convert.ToInt32(Console.ReadLine()))
+                {
+                    case (1):
+                        q1.play();
+                        break;
+                    case (2):
+                        //                       q2.play();
+                        break;
+                    default:
+                        stop = true;
+                        break;
+                }
             }
+
         }
     }
 }

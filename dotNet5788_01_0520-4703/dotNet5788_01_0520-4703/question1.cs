@@ -14,8 +14,8 @@ namespace dotNet5788_01_0520_4703
         public question1()
         {
             arr = new int[100];
-            foreach (int item in arr)
-                arr[item] = Program.rand.Next(0, 1001);
+            for (int i =0; i <100; i++)
+                arr[i] = Program.rand.Next(0, 1001);
         }
 
 
@@ -30,8 +30,9 @@ namespace dotNet5788_01_0520_4703
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {
                     case (1):
-                        Console.WriteLine("Please guess a number between 0 to 1000\n");
-                        CheckGuess(Convert.ToInt32(Console.ReadLine()));
+
+                        GuessOneNumber();
+                        
                         break;
                     case (2):
                         Console.WriteLine("Please guess an amount and a range 0 to 1000\n");
@@ -58,15 +59,25 @@ namespace dotNet5788_01_0520_4703
             }
         }
 
-        private void CheckGuess(int v)
+        private void GuessOneNumber()
         {
-            bool exist = false;
-            for (int i = 0; i < arr.Length; i++)
-                if (arr[i] == v)
-                    exist = true;
-            Print(exist);
+            Console.WriteLine("Please guess a number between 0 to 1000\n (enter 1001 to end)");
+            int num = Convert.ToInt32(Console.ReadLine());
+            while ((num >= 0 && num <= 1000))
+            {          
+               bool exist = false;
+                for (int i = 0; i < arr.Length; i++)
+                    if (arr[i] == num)
+                        exist = true;
+                Print(exist);
+                Console.WriteLine("Please guess a number between 0 to 1000\n (enter 1001 to end)");
+                num = Convert.ToInt32(Console.ReadLine());
+            }
             return;
+
         }
+
+        
 
         private void CheckGuess(int v1, int v2, int v3)
         {

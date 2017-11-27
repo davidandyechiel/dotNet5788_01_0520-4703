@@ -28,14 +28,11 @@ namespace dotNet5788_01_0520_4703
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {
                     case (1):
-
                         GuessOneNumber();
-
                         break;
                     case (2):
                         Console.WriteLine("Please guess an amount and a range 0 to 1000\n");
                         int[] input = getNumbers();
-
                         CheckGuess(input[0], min(input[1], input[2]), max(input[1], input[2]));
                         break;
                     default:
@@ -77,14 +74,14 @@ namespace dotNet5788_01_0520_4703
             return str;
         }
 
-        private static void combine(ref int i,ref string[] str, string[] v)
+        private static void combine(ref int i,ref string[] str, string[] v) // combine two string array to on string array.
         {
             for (int j = 0; j < v.Length; j++)
                 if (i < PARAM)
                     str[i++] = v[j];
         }
 
-        private void GuessOneNumber()
+        private void GuessOneNumber() // get a number from the user and return if it is in the array or not.
         {
             Console.WriteLine("Please guess a number between 0 to 1000\n (enter 1001 to end)");
             int num = Convert.ToInt32(Console.ReadLine());
@@ -99,10 +96,9 @@ namespace dotNet5788_01_0520_4703
                 num = Convert.ToInt32(Console.ReadLine());
             }
             return;
-
         }
 
-        private void CheckGuess(int v1, int v2, int v3)
+        private void CheckGuess(int v1, int v2, int v3) // gets three numbers from the user and check if there is v1 numbers between the range |v2 to v3|.
         {
             int counter = 0;
             for (int item = 0; item < arr.Length; item++)
@@ -112,10 +108,9 @@ namespace dotNet5788_01_0520_4703
             return;
         }
 
-        private void Print(bool v)
+        private void Print(bool v) // print "guess right :)" if v is true or "didn't guess right :(" if v is false.
         {
             Console.WriteLine("you" + (v ? " " : " didn't ") + "guess right" + (v ? " :)\n" : " :(\n"));
         }
-
     }
 }
